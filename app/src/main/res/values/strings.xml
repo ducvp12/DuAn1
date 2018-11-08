@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Quản lý vật nuôi</string>
+    <string name="quanly">Quản lý vật nuôi</string>
+    <string name="thongtin">Thông tin</string>
+    <string name="ghichu">Ghi chú</string>
+    <string name="exit">Exit</string>
+</resources>
