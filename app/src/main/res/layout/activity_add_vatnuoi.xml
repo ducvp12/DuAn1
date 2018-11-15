@@ -1,27 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ct"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".model.AddVatnuoiActivity">
+    android:orientation="vertical"
+    tools:context=".AddVatnuoiActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
     <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/toolbarcolor">
+
         <ImageView
+            android:id="@+id/img_back"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/back"
-            android:id="@+id/img_back"
-            android:layout_marginRight="20dp"/>
+            android:layout_marginRight="20dp"
+            android:src="@drawable/back" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
             android:layout_marginTop="10dp"
-            android:text="ADD"
-            android:textSize="20dp"
+            android:text="Thêm vật nuôi"
             android:textColor="@color/trang"
-            android:layout_marginBottom="18dp"/>
+            android:textSize="20dp" />
     </android.support.v7.widget.Toolbar>
-</android.support.constraint.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/iconpet"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="150dp"
+        android:src="@drawable/iconpet02"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Loại vật nuôi" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edt_trangthai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Trang thái" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edt_loaithucan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Loại thức" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edt_thoigian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Thời gian nuôi" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edt_soluong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Số lượng" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bo"
+        android:text="Lưu"
+        android:onClick="addvatnuoi"
+        android:textColor="@color/trang" />
+</LinearLayout></ScrollView>

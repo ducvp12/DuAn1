@@ -30,6 +30,14 @@ public class QuanlyvatnuoiActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        imbnThongtin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(QuanlyvatnuoiActivity.this, ThongtinActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initView() {
