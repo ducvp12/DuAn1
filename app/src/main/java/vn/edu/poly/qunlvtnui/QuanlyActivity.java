@@ -80,4 +80,8 @@ public class QuanlyActivity extends AppCompatActivity implements ItemClickListen
     public void onClick(int position) {
         Toast.makeText(this, "haha", Toast.LENGTH_SHORT).show();
     }
+
+    public void back(View view) {
+        finish();
+    }
 }

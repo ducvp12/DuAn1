@@ -1,6 +1,8 @@
 package vn.edu.poly.qunlvtnui.adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
+
 
 import java.util.List;
 
@@ -60,6 +62,29 @@ public class QuanlyAdapter extends RecyclerView.Adapter<QuanlyAdapter.ViewHoder>
 
 
     }
+    public void showAlertDialog(final int position){
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Xóa dữ liệu");
+        builder.setMessage("Bạn có muốn xóa không?");
+        builder.setCancelable(false);
+        builder.setPositiveButton("Ứ chịu", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(context, "Hủy", Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.setNegativeButton("Xóa", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                quanlyDAO.deleteQuanly(quanlyList.get(position).getName());
+                quanlyList.remove(position);
+                notifyDataSetChanged();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+    }
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHoder holder, final int position) {
@@ -70,9 +95,7 @@ public class QuanlyAdapter extends RecyclerView.Adapter<QuanlyAdapter.ViewHoder>
         holder.imgDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                quanlyDAO.deleteQuanly(quanlyList.get(position).getName());
-                quanlyList.remove(position);
-                notifyDataSetChanged();
+               showAlertDialog(position);
             }
         });
         holder.itemView.setOnClickListener(new View.OnClickListener() {

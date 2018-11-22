@@ -43,7 +43,7 @@
 
         <ImageView
             android:layout_width="152dp"
-            android:layout_height="127dp"
+            android:layout_height="124dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:id="@+id/imbtn_quanly"
@@ -56,7 +56,7 @@
             android:text="@string/quanly"
             android:id="@+id/tv_quanly"
 
-            android:layout_marginLeft="30dp"/>
+            android:layout_centerHorizontal="true"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -84,7 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/imbn_thongtin"
             android:text="@string/thongtin"
-           android:layout_marginLeft="40dp"/>
+            android:layout_centerHorizontal="true"/>
     </RelativeLayout>
 </LinearLayout>
     <LinearLayout
@@ -115,7 +115,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imbtn_ghichu"
                 android:text="@string/ghichu"
-                android:layout_marginLeft="50dp"/>
+                android:layout_centerHorizontal="true"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -134,13 +134,14 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:id="@+id/imbtn_exit"
+                android:layout_centerHorizontal="true"
                 android:src="@drawable/exit" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imbtn_exit"
                 android:text="@string/exit"
-                android:layout_marginLeft="50dp"/>
+                android:layout_centerHorizontal="true"/>
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

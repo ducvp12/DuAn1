@@ -31,14 +31,7 @@ public class AddVatnuoiActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_vatnuoi);
         initView();
-        imgBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(AddVatnuoiActivity.this,QuanlyActivity.class);
-                startActivity(intent);
-        finish();
-            }
-        });
+
     }
 
     public void addvatnuoi(View view){
@@ -62,6 +55,7 @@ public class AddVatnuoiActivity extends AppCompatActivity {
         } catch (Exception ex) {
             Log.e("Error", ex.toString());
         }
+
     }
 
     private int validateForm() {
@@ -72,7 +66,7 @@ public class AddVatnuoiActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Bạn phải nhập đầy đủ thông ",
                     Toast.LENGTH_SHORT).show();
             check = -1;
-        }
+        } else {finish();}
 
         return check;
     }
@@ -88,5 +82,9 @@ public class AddVatnuoiActivity extends AppCompatActivity {
         edtLoaithucan = (EditText) findViewById(R.id.edt_loaithucan);
         edtThoigian = (EditText) findViewById(R.id.edt_thoigian);
         edtSoluong = (EditText) findViewById(R.id.edt_soluong);
+    }
+
+    public void back(View view) {
+        finish();
     }
 }

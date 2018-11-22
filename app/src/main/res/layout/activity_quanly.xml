@@ -22,6 +22,7 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:src="@drawable/back"
+            android:onClick="back"
         android:layout_marginRight="20dp"/>
         <TextView
             android:layout_width="wrap_content"
@@ -48,13 +49,13 @@
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fl"
-
             android:layout_width="153dp"
             android:layout_height="81dp"
-
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:src="@android:drawable/ic_input_add" />
+            android:layout_marginBottom="10dp"
+            android:src="@android:drawable/ic_input_add"
+            android:background="@color/trang"/>
 
 </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
