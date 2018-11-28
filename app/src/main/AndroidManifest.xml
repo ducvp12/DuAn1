@@ -24,7 +24,6 @@
         <activity android:name=".AddVatnuoiActivity" />
         <activity android:name=".ThongtinActivity" />
         <activity android:name=".WebViewActivity" />
-        <activity android:name=".ChitietQuanLy_activity"></activity>
     </application>
 
 </manifest>
