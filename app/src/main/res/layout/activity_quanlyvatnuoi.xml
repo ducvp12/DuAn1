@@ -24,69 +24,73 @@
             android:textColor="@color/trang"
             android:layout_marginBottom="18dp"/>
     </android.support.v7.widget.Toolbar>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
- android:layout_margin="20dp"
-    android:orientation="horizontal">
-    <RelativeLayout
-        android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="20dp"
+        android:orientation="horizontal">
 
-        android:layout_weight="1">
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-
-        android:src="@drawable/trang"/>
-
-        <ImageView
-            android:layout_width="152dp"
-            android:layout_height="124dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:id="@+id/imbtn_quanly"
-
-            android:src="@drawable/iconpet02" />
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imbtn_quanly"
-            android:text="@string/quanly"
-            android:id="@+id/tv_quanly"
+            android:layout_margin="10dp"
+            android:layout_weight="1">
 
-            android:layout_centerHorizontal="true"/>
-    </RelativeLayout>
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/trang"/>
 
-    <RelativeLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_weight="1">
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/trang"/>
+            <ImageView
+                android:layout_width="152dp"
+                android:layout_height="124dp"
 
-        <ImageView
-            android:layout_width="140dp"
-            android:layout_height="115dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="6dp"
-            android:layout_marginBottom="0dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:id="@+id/imbn_thongtin"
-            android:src="@drawable/thongtin" />
-        <TextView
-            android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+
+                android:id="@+id/imbtn_quanly"
+
+                android:src="@drawable/iconpet02" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imbtn_quanly"
+                android:text="@string/quanly"
+                android:id="@+id/tv_quanly"
+
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imbn_thongtin"
-            android:text="@string/thongtin"
-            android:layout_centerHorizontal="true"/>
-    </RelativeLayout>
-</LinearLayout>
+            android:layout_margin="10dp"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/trang"/>
+
+            <ImageView
+                android:layout_width="140dp"
+                android:layout_height="115dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="6dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="0dp"
+
+
+                android:id="@+id/imbn_thongtin"
+                android:src="@drawable/thongtin" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imbn_thongtin"
+                android:text="@string/thongtin"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -100,14 +104,16 @@
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
                 android:src="@drawable/trang"/>
 
             <ImageView
                 android:layout_width="152dp"
                 android:layout_height="115dp"
                 android:layout_marginTop="10dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
+
+                android:layout_centerHorizontal="true"
+
                 android:id="@+id/imbtn_ghichu"
                 android:src="@drawable/note" />
             <TextView
@@ -125,14 +131,16 @@
             android:layout_weight="1">
             <ImageView
                 android:layout_width="150dp"
+                android:layout_centerHorizontal="true"
                 android:layout_height="150dp"
                 android:src="@drawable/trang"/>
 
             <ImageView
                 android:layout_width="152dp"
                 android:layout_height="127dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
+
+
+
                 android:id="@+id/imbtn_exit"
                 android:layout_centerHorizontal="true"
                 android:src="@drawable/exit" />
