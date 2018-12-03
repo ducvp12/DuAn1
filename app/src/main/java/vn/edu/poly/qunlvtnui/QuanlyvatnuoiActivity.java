@@ -47,4 +47,13 @@ public class QuanlyvatnuoiActivity extends AppCompatActivity {
         imbtnExit = (ImageView) findViewById(R.id.imbtn_exit);
         tvQuanly = (TextView) findViewById(R.id.tv_quanly);
     }
+
+    public void exit(View view) {
+        finish();
+    }
+
+    public void Ghichu(View view) {
+        Intent intent=new Intent(QuanlyvatnuoiActivity.this,GhichuActivity.class);
+        startActivity(intent);
+    }
 }

@@ -2,9 +2,9 @@ package vn.edu.poly.qunlvtnui;
 
 import android.app.Dialog;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -16,19 +16,22 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import vn.edu.poly.qunlvtnui.adapter.GhichuAdapter;
 import vn.edu.poly.qunlvtnui.adapter.QuanlyAdapter;
+import vn.edu.poly.qunlvtnui.dao.GhichuDAO;
 import vn.edu.poly.qunlvtnui.dao.QuanlyDAO;
+import vn.edu.poly.qunlvtnui.model.Ghichu;
 import vn.edu.poly.qunlvtnui.model.Quanly;
 
-public class QuanlyActivity extends AppCompatActivity implements ItemClickListener {
-    private List<Quanly> quanlyList;
-    private QuanlyAdapter adapter;
+public class GhichuActivity extends AppCompatActivity implements ItemClickListener {
+    private List<Ghichu> quanlyList;
+    private GhichuAdapter adapter;
     private RecyclerView recyclerView;
-    private QuanlyDAO quanlyDAO;
+    private GhichuDAO ghichuDAO;
     private FloatingActionButton fl;
     Dialog dialog;
-    private EditText tv1;
-    private EditText tv2;
+    private TextView tv1;
+    private TextView tv2;
     private Button btn_luu;
     private EditText tv4;
     private EditText tv5;
@@ -37,7 +40,7 @@ public class QuanlyActivity extends AppCompatActivity implements ItemClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quanly);
+        setContentView(R.layout.activity_ghichu);
         recyclerView = findViewById(R.id.rvquanly);
         quanlyList = new ArrayList<>();
 //        for (int i = 1; i < 40; i++) {
@@ -45,19 +48,19 @@ public class QuanlyActivity extends AppCompatActivity implements ItemClickListen
 //
 //        }
 
-        adapter = new QuanlyAdapter(QuanlyActivity.this, quanlyList, this);
+        adapter = new GhichuAdapter(GhichuActivity.this, quanlyList, this);
         recyclerView.setAdapter(adapter);
         RecyclerView.LayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
-        quanlyDAO = new QuanlyDAO(QuanlyActivity.this);
-        quanlyList = quanlyDAO.getQuanly();
+        ghichuDAO = new GhichuDAO(GhichuActivity.this);
+        quanlyList = ghichuDAO.getGhichu();
 
 
         initView();
         fl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(QuanlyActivity.this, AddVatnuoiActivity.class);
+                Intent intent = new Intent(GhichuActivity.this, AddGhichuActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -69,17 +72,13 @@ public class QuanlyActivity extends AppCompatActivity implements ItemClickListen
     protected void onResume() {
         super.onResume();
         quanlyList.clear();
-        quanlyList = quanlyDAO.getQuanly();
-        adapter.changeDataset(quanlyDAO.getQuanly());
+        quanlyList = ghichuDAO.getGhichu();
+        adapter.changeDataset(ghichuDAO.getGhichu());
     }
 
     private void initView() {
         fl = (FloatingActionButton) findViewById(R.id.fl);
-        tv1 =  findViewById(R.id.tv1);
-        tv2 = findViewById(R.id.tv2);
 
-        tv4 = findViewById(R.id.tv4);
-        tv5 = findViewById(R.id.tv5);
     }
 
     @Override
@@ -89,39 +88,36 @@ public class QuanlyActivity extends AppCompatActivity implements ItemClickListen
 
     @Override
     public void onClick(final int position) {
-        dialog = new Dialog(QuanlyActivity.this);
-        dialog.setContentView(R.layout.dialog_chitet);
+        dialog = new Dialog(GhichuActivity.this);
+        dialog.setContentView(R.layout.dialog_ghichu);
         dialog.setTitle("Chi tiết");
-        tv1 =  dialog.findViewById(R.id.tv1);
-        tv2 =  dialog.findViewById(R.id.tv2);
-
-        tv4 =  dialog.findViewById(R.id.tv4);
-        tv5 =  dialog.findViewById(R.id.tv5);
+        tv1 =  dialog.findViewById(R.id.tvtieude);
+        tv2 =  dialog.findViewById(R.id.tvnoidung);
 
         dialog.show();
 
-        tv1.setText(String.valueOf(quanlyList.get(position).getName()));
-        tv2.setText(String.valueOf(quanlyList.get(position).getLoaithucan()));
+        tv1.setText(String.valueOf(quanlyList.get(position).getTieude()));
+        tv2.setText(String.valueOf(quanlyList.get(position).getNoidung()));
 
-        tv4.setText(String.valueOf(quanlyList.get(position).getThoigian()));
-        tv5.setText(String.valueOf(quanlyList.get(position).getTrangthai()));
-        btn_luu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String a1 = tv1.getText().toString();
-                String a2 = tv1.getText().toString();
-                String a3 = tv1.getText().toString();
-                String a4 = tv1.getText().toString();
-                quanlyList = quanlyDAO.getQuanly();
-                quanlyDAO.updatequanly(a1,a2,a3);
-                adapter.changeDataset(quanlyDAO.getQuanly());
 
-            }
-        });
+//        btn_luu.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String a1 = tv1.getText().toString();
+//                String a2 = tv1.getText().toString();
+//                String a3 = tv1.getText().toString();
+//                String a4 = tv1.getText().toString();
+//                quanlyList = ghichuDAO.getGhichu();
+//
+//
+//            }
+//        });
 
     }
 
     public void back(View view) {
         finish();
     }
+
+
 }
